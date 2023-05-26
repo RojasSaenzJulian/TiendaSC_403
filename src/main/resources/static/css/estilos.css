@@ -1,0 +1,28 @@
+/*El de # se utiliza para un único elemento en la página*/
+#tituloPrincipal{
+/*    Se agregan los atributos que se deseen*/
+    color:blue;
+    font-size:30px;
+    font-family: Comic Sans MS;
+/*    Luego de definirlos, se debe de llamarlo en la página donde se hizo,
+    en este caso en el ejemplo09, SIEMPRE se hacen en el head*/
+}
+
+/*El de . se utiliza para un único elemento en la página*/
+.parrafosEjemplo{
+    color:green;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.parrafoSecundario{
+    color:blueviolet;
+    
+}
+
+/*El de p se utiliza para TODOS los párrafos */
+p{
+    color:brown;
+    
+}
+

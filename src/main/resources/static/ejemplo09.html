@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    Primera prioridad. Llamar estilos SIEMPRE aquí-->        
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <!--Segunda prioridad-->
+        <style>
+            .parrafoSecundario{
+            color:red;
+        </style>
+        <!--Tercera prioridad es colocar el stylo en la línea-->
+    </head>
+    <body>
+<!--        ningun id tiene que llamarse igual-->
+        <h1 id="tituloPrincipal">Ejemplo 9</h1>
+        <br>
+        <br>
+<!--        Formulario-->
+<!--        action: cuando de boton cual va hacer la accion-->
+        <form action="#">
+            
+            <label>Nombre: </label>
+<!--            placeholder:texto de ayuda-->
+<!--            type: nos dice que tipo de Input es-->
+<!--            name: para ponerle un nombre al texto que vamos a colocar-->
+<!--            id: es único y no se puede repetir-->
+            <input type="text" name="nombre" id="nombre" placeholder="Digite su nombre"/>
+            <br>
+            
+            <label>Apellidos: </label>
+            <input type="text" name="apellidos" id="apellidos" size="50" />
+            <br>
+            
+            <label>Password: </label>
+<!--            password type: Cambia el formato a contraseña-->
+            <input type="password" name="password" id="password" />
+            <br>
+<!--            sumbit: encargado de enviar toda la información que se colocó 
+                        anteriormenteen "form action"""-->
+            <input type="submit" value="Enviar" />
+        </form>
+<!--Se puede utilizar un div o clases-->
+        <p class="parrafosEjemplo">Prueba de texto 1</p>
+        <!--Se da prioridad a la ultima clase colocada-->
+        <p class="parrafosEjemplo parrafoSecundario" style="color: coral">Prueba de texto 2</p>
+        <p class="parrafosEjemplo">Prueba de texto 3</p>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit curabitur blandit aenean, ornare gravida magnis pellentesque nibh cubilia iaculis massa aliquam, donec luctus inceptos est conubia venenatis eget sollicitudin viverra. Eu egestas volutpat penatibus cras fusce parturient nisl turpis senectus, primis a proin molestie integer facilisis sagittis habitant, rhoncus sem non facilisi mus dictum ornare mi. Est senectus justo laoreet quisque ullamcorper curae eu ante tortor pharetra molestie cum semper tincidunt magna, per morbi mollis montes aliquet parturient hac dui aenean dapibus aptent tristique gravida. Rutrum platea etiam hendrerit augue auctor mus vehicula, nec habitasse sociosqu elementum morbi tellus eu nullam, quam libero ultricies diam consequat et. Dictumst tortor accumsan eros vitae litora facilisi libero egestas penatibus, habitant placerat facilisis urna class diam tincidunt velit ultricies ornare, torquent nisl pretium morbi laoreet mauris risus dictum.</p>
+        <p>Egestas nec interdum eu tortor porta rutrum orci maecenas cras vulputate, commodo netus torquent malesuada mattis fermentum fusce mus tempor. Habitant odio mus urna viverra erat magna pharetra semper, per netus volutpat duis quisque eleifend felis lectus, placerat vivamus bibendum porttitor curabitur quam nisi. Nunc tristique sem dapibus fringilla pulvinar porta sagittis taciti, phasellus sociis ligula hendrerit habitant ad pellentesque, non ornare commodo viverra eget dignissim erat.</p>
+        
+    </body>
+</html>
