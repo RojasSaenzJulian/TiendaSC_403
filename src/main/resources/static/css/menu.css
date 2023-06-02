@@ -1,0 +1,82 @@
+/*selector universal*/
+*{
+    margin: 0;
+    box-sizing: border-box;/*quita todos los bordes*/
+}
+body{
+    font-family:sans-serif;
+    /*significa que arriba 90, 20 a los lados y 0 abajo*/
+    padding: 60px 20px 0px;
+}
+.header{
+    background-color: navy;
+    
+    position: fixed; /*fija*/
+    top: 0; /*El header (h1) va a comenzar en la pura esquina*/
+    left:0;/*El header (h1) va a comenzar en la pura esquina*/
+    height:12%; /*de arriba hacia abajo*/
+    width:100% /*de izquierda a derecha*/
+    
+}
+.nav{
+    display:flex; /*despliega hacia el lado*/
+    justify-content: space-between; /*espaci oentre ellos*/
+    max-width:992px;
+    margin:0 auto; /*LO VA A CENTRAS*/
+}
+/*todo lo que sea nav-link se le van a cambiar esos atributos*/
+.nav-link{
+    color: white;
+    text-decoration: none; /*quita el color de las anclas subrayado*/
+}
+/*Todo esto se le va a aplicar al logo Techshop*/
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    padding:0 40px;
+    line-height: 80px;
+}
+.nav-menu{
+    display: flex;/*se acomodaron en vertical*/
+    margin-right: 40px; /*para separarse del margen*/
+    list-style: none;/*quita el tipo de lista, ya sea ordenada o a,b,c..*/
+}
+/*separar los items*/
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px; /*separacion entre opciones*/
+    line-height: 80px; /*a la altura que va a estar, en este caso 80 para que esté alineado a el logo*/
+    width:max-content;
+}
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 8px;/*redondea los bordes*/
+    
+}
+.nav-menu-link:hover{
+    background-color: #2247ec;
+    /*font-size:20px;   Hace que se agrande cuadno se selecciones, el problema es que mueve todo*/
+    transition: 0.5s;
+    
+    
+}
+#contenido{
+    padding:10px 20px;
+    position: fixed;
+    top: 13%; /*El header (h1) va a comenzar en la pura esquina*/
+    left:1%;
+    width: 95%;
+    background-color: chocolate;
+    bottom:7%;    
+}
+.footer{
+    position: fixed;
+    bottom:0;
+    height: 8%;
+    left:0;
+    background-color: black;
+    color:white;
+    width:100%;
+    
+    
+}

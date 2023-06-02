@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<!--lang: idioma en el que se encuentra la página-->
 <html lang="es">
     <head>
         <!--Esto es el título que se va a ver en la pestaña -->
         <title>TechShop</title>
-<!--        charset: tipo de codificacion, en este caso es UTF que nos permite poner las palabras en español-->
+        <!--        charset: tipo de codificacion, en este caso es UTF que nos permite poner las palabras en español-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <!--        description: podemos poder una descripción-->
         <meta name="description" content="Esta página es del curso de web">
-
         <!--    keywords:palabras para que el buscador las encuentre y las tome la página-->
         <meta name="keywords" content="html5, css3, fidelitas">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
+
     <body>
-        <!--Encabezado o "H"eading -->
-        <h1>Home</h1>
-        <!--Esto es el "p"árrafo -->
-        <p>Bienvenidos al curso de Web y Patrones</p>
-        
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit curabitur blandit aenean, ornare gravida magnis pellentesque nibh cubilia iaculis massa aliquam, donec luctus inceptos est conubia venenatis eget sollicitudin viverra. Eu egestas volutpat penatibus cras fusce parturient nisl turpis senectus, primis a proin molestie integer facilisis sagittis habitant, rhoncus sem non facilisi mus dictum ornare mi. Est senectus justo laoreet quisque ullamcorper curae eu ante tortor pharetra molestie cum semper tincidunt magna, per morbi mollis montes aliquet parturient hac dui aenean dapibus aptent tristique gravida. Rutrum platea etiam hendrerit augue auctor mus vehicula, nec habitasse sociosqu elementum morbi tellus eu nullam, quam libero ultricies diam consequat et. Dictumst tortor accumsan eros vitae litora facilisi libero egestas penatibus, habitant placerat facilisis urna class diam tincidunt velit ultricies ornare, torquent nisl pretium morbi laoreet mauris risus dictum.</p>
-        <p>Egestas nec interdum eu tortor porta rutrum orci maecenas cras vulputate, commodo netus torquent malesuada mattis fermentum fusce mus tempor. Habitant odio mus urna viverra erat magna pharetra semper, per netus volutpat duis quisque eleifend felis lectus, placerat vivamus bibendum porttitor curabitur quam nisi. Nunc tristique sem dapibus fringilla pulvinar porta sagittis taciti, phasellus sociis ligula hendrerit habitant ad pellentesque, non ornare commodo viverra eget dignissim erat.</p>
-        <p>Lacus nascetur tempor ac gravida leo ullamcorper tristique, sem aptent primis turpis class iaculis natoque, netus nec etiam mi accumsan fermentum. Nisi nulla senectus quam facilisi dictumst aliquet, congue curae ullamcorper taciti a rutrum mus, suscipit diam cubilia nam vestibulum. Dictum mollis donec metus sed cubilia feugiat, nibh potenti leo integer volutpat augue conubia, tincidunt aenean placerat inceptos ante.</p>
-        <!--br salto de línea -->
-        <br>
-        <br>
-        <p>Última línea</p>
- 
+        <header class="header">
+            <nav class="nav">
+                <a href="index.html" class="logo nav-link">TechShop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="index.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo3.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframes.html">iFrames</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formularios.html">Formularios</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="contenido">
+            <!--Encabezado o "H"eading--> 
+            <h1>Home</h1>
+            <!--Esto es el "p"árrafo--> 
+            <p>Bienvenidos al curso de Web y Patrones</p>
+            <br>
+
+            <a href="#">Ejemplo</a><br><br>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit curabitur blandit aenean, ornare gravida magnis pellentesque nibh cubilia iaculis massa aliquam, donec luctus inceptos est conubia venenatis eget sollicitudin viverra. Eu egestas volutpat penatibus cras fusce parturient nisl turpis senectus, primis a proin molestie integer facilisis sagittis habitant, rhoncus sem non facilisi mus dictum ornare mi. Est senectus justo laoreet quisque ullamcorper curae eu ante tortor pharetra molestie cum semper tincidunt magna, per morbi mollis montes aliquet parturient hac dui aenean dapibus aptent tristique gravida. Rutrum platea etiam hendrerit augue auctor mus vehicula, nec habitasse sociosqu elementum morbi tellus eu nullam, quam libero ultricies diam consequat et. Dictumst tortor accumsan eros vitae litora facilisi libero egestas penatibus, habitant placerat facilisis urna class diam tincidunt velit ultricies ornare, torquent nisl pretium morbi laoreet mauris risus dictum.</p>
+            <p>Egestas nec interdum eu tortor porta rutrum orci maecenas cras vulputate, commodo netus torquent malesuada mattis fermentum fusce mus tempor. Habitant odio mus urna viverra erat magna pharetra semper, per netus volutpat duis quisque eleifend felis lectus, placerat vivamus bibendum porttitor curabitur quam nisi. Nunc tristique sem dapibus fringilla pulvinar porta sagittis taciti, phasellus sociis ligula hendrerit habitant ad pellentesque, non ornare commodo viverra eget dignissim erat.</p>
+            <p>Lacus nascetur tempor ac gravida leo ullamcorper tristique, sem aptent primis turpis class iaculis natoque, netus nec etiam mi accumsan fermentum. Nisi nulla senectus quam facilisi dictumst aliquet, congue curae ullamcorper taciti a rutrum mus, suscipit diam cubilia nam vestibulum. Dictum mollis donec metus sed cubilia feugiat, nibh potenti leo integer volutpat augue conubia, tincidunt aenean placerat inceptos ante.</p>
+            <!--br salto de línea--> 
+            <br>
+            <br>
+            <p>Última línea</p>
+
+        </section>
+        <footer class="footer">Derechos reservados 2023 </footer>
+
     </body>
 </html>

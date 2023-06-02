@@ -23,6 +23,21 @@
 /*El de p se utiliza para TODOS los párrafos */
 p{
     color:brown;
+    color:#961c4b;
+    margin: 1px 2px 3px 4px;/*Va en orden de las manecillas del reloj*/
+}
+/*Se aplica en todas las anclas*/
+/*hover es para cuando se posicione el ratón encima*/
+a:hover{
+    color:white;
+    background-color: black;
+    font-size: 25px;
+    transition: 0.9s;
+    
+}
+a:active{/*active es para cuando de click*/
+    color:crimson;
+    background-color: cadetblue;
     
 }
 
