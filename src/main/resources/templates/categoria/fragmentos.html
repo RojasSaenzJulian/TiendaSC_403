@@ -21,6 +21,12 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-3">   
+                    <a th:href="@{/categoria/nuevo}"
+                       class="btn btn-info">
+                        <i class="fas fa-plus"></i> [[#{accion.nuevo}]]</a>      
+                </div>
         </section>
 
         <!-- 2 Fragmento para agregar categoria, es la ventana modal -->
@@ -66,7 +72,7 @@
         <section th:fragment="listadoCategorias" id="categorias">
             <div class="container">
                 <div class="row">
-                   <div class="col-md-9">  <!-- tamaño del cuadro-->
+                    <div class="col-md-9">  <!-- tamaño del cuadro-->
                         <div class="card">
                             <div class="card-header">
                                 <h4>[[#{categoria.listado}]]</h4>
