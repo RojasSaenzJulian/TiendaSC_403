@@ -1,13 +1,14 @@
 package com.TiendaSC_403.domain;
 import jakarta.persistence.*;//antes decia entity, ahora * para que aplique con todas//
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 //va a sevir como na entidad para mapear los campos categoria de la tabla de mysql
 @Data //Crea set and get sin que se muestre en pantalla//
 @Entity
 @Table(name="categoria")
-public class Categoria implements Serializable{ //Serializablepermite que ese objeto se pueda convertir en pieza y luego reconstruirse/
+public class Categoria implements Serializable{ //Serializablepermite que ese objeto se pueda convertir en algo y luego reconstruirse/
     
     //Vesión de Serialización//
     private static final long serialVersionUID = 1L;
@@ -21,6 +22,10 @@ public class Categoria implements Serializable{ //Serializablepermite que ese ob
     private String rutaImagen;
     private boolean activo;
 
+    @OneToMany
+    @JoinColumn(name="id_categoria")
+    private List<Producto> productos; //Crear una lista porque son muchos
+    
     public Categoria() {
     }
 
