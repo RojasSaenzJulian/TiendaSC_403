@@ -31,6 +31,8 @@ public class CategoriaController {
         log.info("Consumiendo el recurso /categoria/listado");
         List<Categoria> categorias = categoriaService.getCategorias(false);
         
+//        List<Categoria> categorias = categoriaService.getForDescripcion("Teclados");
+        
         //primero alias, luego el valor, en este caso el objeto
         model.addAttribute("categorias", categorias);
         model.addAttribute("totalCategorias", categorias.size());//size: devuelve cant de elementos que tiene
