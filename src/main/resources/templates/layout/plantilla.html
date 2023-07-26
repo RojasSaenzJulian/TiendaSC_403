@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--sirve para crear fracmentos de código para reutilizar en diferentes páginas-->
 <html xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" 
+     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"> <!-- permite utilizar nomenclatura de sec-->
     <!--fragment: Lo que hace es, eeeto head y todo loque hay adetro lo voy a identificar con ese nombre.
                     Este se puede utilizar colocando en los head de cada pa´gina con el formato "th:replace"" "
         head:es sólo un nombre-->
@@ -29,12 +30,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav" sec:authorize="hasRole('ROLE_VENDEDOR') or hasRole('ROLE_ADMIN')"> <!--Esta sección de listado sólo se va a ver cuando tenga ROL de vendededor
                             <!--nav-link da estilos a las anclas-->
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.categorias}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li>
                             <!--crear la opcion de productos--> 
-                             <li class="nav-item dropdown">
+                             <li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')">
                                 <a class="nav-link dropdown-toggle" 
                                    data-bs-toggle="dropdown" 
                                    href="#" 
@@ -43,10 +44,11 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
+                                    
+                                    <li><a class="dropdown-item"  th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
-                        </ul>
+                            </ul>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Lang</a>
@@ -55,7 +57,27 @@
                                     <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
                                 </ul>
                             </li>
-                        </ul>                        
+                        </ul> 
+                        <ul class="navbar-nav" sec:authorize="!isAuthenticated()"> <!--Se muestra cuand el usuario no está autenticado--> 
+                        <li class="nav-item text-white my-auto">
+                            <a class="nav-link" th:href="@{/login}"><i class="fa fa-sign-in-alt"></i></a>
+                        </li></ul>
+                        
+                        <ul class="navbar-nav" sec:authorize="isAuthenticated()"> <!--Se muestra cuand el usuario no está autenticado--> 
+                            <li class="nav-item text-white my-auto" th:if="${avatar != null && avatar != ''}">
+                                <img th:src="${avatar}" height="40" />
+                            </li>
+                            <li class="nav-item text-white my-auto">
+                                <i class="fa fa-user"></i> <span  sec:authentication="name">Username</span>&nbsp; <!--Crea espacio-->
+                            </li>                                                       <!--name devuelve es Username con el que se authetnticó--> 
+                            <li class="nav-item text-white my-auto">
+                                <i class="fa fa-user"></i> <span  sec:authentication="principal.authorities">Roles</span> <!--name devuelve es Username con el que se authetnticó--> 
+                            </li>
+                            <li class="nav-item my-auto">
+                            <form method="POST" th:action="@{/logout}">
+                                <button class="btn btn-dark"><i class="fa fa-sign-out-alt"></i></button>
+                            </form>
+                        </li></ul>
                     </div>
                 </div>
             </nav>
