@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service("userDtailsService")
 public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDetailsService {
@@ -21,14 +22,15 @@ public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDet
     @Autowired
     private UsuarioDao usuarioDao;
     
-     @Autowired
+    @Autowired
     private HttpSession session;
     
     @Override
+    @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         //Buscar en DB el usuario
         Usuario usuario = usuarioDao.findByUsername(username);
+
         
         if(usuario == null){
             throw new UsernameNotFoundException("El usuario" + username+ " no existe");
