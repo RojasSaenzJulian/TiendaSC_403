@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/springframework/Controller.java to edit this template
- */
+
 package com.TiendaSC_403.controller;
 
 import com.TiendaSC_403.domain.Usuario;
@@ -43,13 +40,13 @@ public class RegistroController {
         return "/registro/salida";
     }
 
-    @GetMapping("/activacion/{usuario}/{id}")
+    @GetMapping("/activacion/{usuario}/{id}") /*metodo que va a devolver usuario y id*/
     public String activar(
             Model model, 
-            @PathVariable(value = "usuario") String usuario, 
+            @PathVariable(value = "usuario") String usuario, /*Path es el URL*/
             @PathVariable(value = "id") String id) {
         model = registroService.activar(model, usuario, id);
-        if (model.containsAttribute("usuario")) {
+        if (model.containsAttribute("usuario")) {/*sirve para saber si ya hay un metodo en eso*/
             return "/registro/activa";
         } else {
             return "/registro/salida";

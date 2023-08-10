@@ -20,10 +20,13 @@ public class RegistroServiceImpl implements RegistroService {
 
     @Autowired
     private CorreoService correoService;
+    
     @Autowired
     private UsuarioService usuarioService;
+    
     @Autowired
     private MessageSource messageSource;  //creado en semana 4...
+    
     @Autowired
     private FirebaseStorageServiceImpl firebaseStorageService;
 
@@ -53,6 +56,7 @@ public class RegistroServiceImpl implements RegistroService {
     public void activar(Usuario usuario, MultipartFile imagenFile) {
         var codigo = new BCryptPasswordEncoder();
         usuario.setPassword(codigo.encode(usuario.getPassword()));
+        usuario.setActivo(true);
 
         if (!imagenFile.isEmpty()) {
             usuarioService.save(usuario, false);
@@ -126,7 +130,7 @@ public class RegistroServiceImpl implements RegistroService {
         } else {
             mensaje = String.format(
                     messageSource.getMessage(
-                            "registro.mensaje.usuario.o.correo", 
+                            "registro.mensaje.no.existe", 
                             null, 
                             Locale.getDefault()),
                     usuario.getUsername(), usuario.getCorreo());

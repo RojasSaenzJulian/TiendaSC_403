@@ -21,6 +21,9 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
     
+    @Autowired
+    private FirebaseStorageService firebaseStorageService;
+    
     
     @GetMapping("/listado")
     public String listado(Model model) {
@@ -35,8 +38,6 @@ public class UsuarioController {
         return "/usuario/modifica";
     }
 
-    @Autowired
-    private FirebaseStorageService firebaseStorageService;
 
     @PostMapping("/guardar")
     public String usuarioGuardar(Usuario usuario,
